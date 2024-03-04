@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "src/util/store", "src/util/types.ts"  ]
 }

@@ -1,46 +1,65 @@
-# Getting Started with Create React App
+# Careerflow Jobtracker Project README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+The Job Tracker project is a web application designed to help users organize and track their job search process. It provides features for managing job listings and tracking their status through different stages such as "Saved", "Applied", "Interviewing", "Offer", and "Rejected".
 
-In the project directory, you can run:
+## Code Components
 
-### `npm start`
+### `useStore` (Zustand Store)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Purpose**: Manages the application state using Zustand.
+- **Functions**:
+  - `addJob(job: Job, section: string)`: Adds a new job to the specified section.
+  - `updateJob(updatedJob: Job)`: Updates the details of a job.
+- **File**: `util/store/store.ts`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `KanbanBoard` Component
 
-### `npm test`
+- **Purpose**: Renders the Kanban board layout for displaying job listings organized into columns.
+- **Functions**:
+  - `handleDragEnd(result: DropResult)`: Handles drag and drop functionality for moving job cards between columns.
+- **File**: `components/KanbanBoard.tsx`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `KanbanColumn` Component
 
-### `npm run build`
+- **Purpose**: Represents a column in the Kanban board, containing job cards.
+- **Props**:
+  - `column`: Column data including title and associated jobs.
+  - `isMobileOrTablet`: Boolean indicating if the device is mobile or tablet.
+- **File**: `components/KanbanColumn.tsx`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `JobCard` Component
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Purpose**: Displays a single job card with job details.
+- **Props**:
+  - `job`: Job data including title, company, date added, etc.
+  - `index`: Index of the job card in the column.
+- **File**: `components/JobCard.tsx`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `JobDetailModal` Component
 
-### `npm run eject`
+- **Purpose**: Provides a modal for viewing and editing job details.
+- **Props**:
+  - `visible`: Boolean indicating modal visibility.
+  - `job`: Job data to be displayed in the modal.
+  - `onClose`: Callback function to close the modal.
+- **File**: `components/JobDetailModal.tsx`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `AddJobForm` Component
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Purpose**: Renders a form for adding new job listings.
+- **Functions**:
+  - `onFinish(values: any)`: Handles form submission and adds a new job.
+- **File**: `components/AddJobForm.tsx`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### `App` Component
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **Purpose**: Main component of the application, responsible for rendering the layout and managing global state.
+- **Functions**:
+  - `handleDragEnd(result: DropResult)`: Handles drag and drop functionality for moving job cards between columns.
+- **File**: `App.tsx`
 
-## Learn More
+## Conclusion
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The Job Tracker project consists of several components responsible for managing the application state, rendering the user interface, and handling user interactions. Each component plays a specific role in providing the functionality required for organizing and tracking job listings effectively.
