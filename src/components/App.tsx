@@ -59,7 +59,7 @@ const App: React.FC = () => {
 
   return (
     <Layout>
-      <Header style={{ backgroundColor: "rgb(21, 44, 91)" }}></Header>
+      <Header style={{ backgroundColor: "rgb(21, 44, 91)", color: "white", fontSize: '32px'}}>Trackiii</Header>
       <Content
         style={{
           padding: "42px",

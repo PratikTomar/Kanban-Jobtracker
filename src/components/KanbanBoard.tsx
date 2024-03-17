@@ -28,6 +28,7 @@ const KanbanBoard: React.FC<Props> = () => {
         display: "flex",
         overflowX: "scroll",
         flexWrap: "nowrap",
+        whiteSpace: "nowrap"
       }}
     >
       {columns.map((column) => (

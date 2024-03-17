@@ -13,8 +13,6 @@ const AddJobForm: React.FC = () => {
   };
 
   const onFinish = (values: any) => {
-    console.log(values);
-    
     const newJob: Job = {
       id: Date.now(),
       title: values.title,
@@ -91,13 +89,12 @@ const AddJobForm: React.FC = () => {
             <Form.Item
               name="section"
               label="Section"
-              rules={[{ required: true, message: "Please enter valid section name" }]}
+              rules={[
+                { required: true, message: "Please enter valid section name" },
+              ]}
             >
-              <Select defaultValue ="--Please select a section--">
-                <Select.Option value="saved">
-                  {" "}
-                  Saved{" "}
-                </Select.Option>
+              <Select defaultValue="--Please select a section--">
+                <Select.Option value="saved"> Saved </Select.Option>
                 <Select.Option value="applied"> Applied</Select.Option>
                 <Select.Option value="interviewing">
                   {" "}
