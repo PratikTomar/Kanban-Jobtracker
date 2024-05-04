@@ -1,4 +1,4 @@
-# Careerflow Jobtracker Project README
+# Jobtracker Project README
 
 ## Introduction
 
@@ -59,6 +59,20 @@ The Job Tracker project is a web application designed to help users organize and
 - **Functions**:
   - `handleDragEnd(result: DropResult)`: Handles drag and drop functionality for moving job cards between columns.
 - **File**: `App.tsx`
+
+## To Setup this in your local
+
+To run this project locally, follow these steps:
+
+1. Clone the repository and run below command to run
+
+   ```bash
+   git clone https://github.com/PratikTomar/Kanban-Jobtracker.git
+
+   npm install
+
+   npm start
+   ```
 
 ## Conclusion
 
